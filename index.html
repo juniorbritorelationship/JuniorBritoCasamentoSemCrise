@@ -83,7 +83,7 @@
         .slogan { color: var(--accent-color); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
         .sub-slogan { color: var(--text-gray); font-size: 0.85rem; font-weight: 300; margin-top: 4px; }
 
-        /* --- CARD DE EVENTO (CORRIGIDO PROPORÇÃO) --- */
+        /* --- CARD DE EVENTO (CORRIGIDO PARA NÃO CORTAR OU DEIXAR ESPAÇO) --- */
         .event-card {
             width: 100%;
             background: linear-gradient(145deg, #1a0b00 0%, #000000 100%);
@@ -98,21 +98,21 @@
             padding-bottom: 20px;
         }
         
+        /* CORREÇÃO AQUI: Removemos aspect-ratio e height fixa */
         .event-banner-container {
             width: 100%;
-            /* REMOVIDO height fixa para não cortar */
-            aspect-ratio: 16/9; /* ISSO GARANTE A PROPORÇÃO DE VÍDEO */
+            height: auto; /* Deixa a altura livre */
             position: relative;
             border-bottom: 1px solid var(--accent-color);
             margin-bottom: 15px;
+            line-height: 0; /* Remove espaços brancos fantasmas */
         }
 
+        /* CORREÇÃO AQUI: Imagem se ajusta sozinha */
         .event-banner-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Garante que se sobrar espaço, mostre o topo */
-            object-position: top center; 
+            height: auto; /* A altura será proporcional à largura */
+            display: block; /* Garante que preencha o bloco */
         }
 
         /* Botão AO VIVO */

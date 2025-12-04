@@ -5,31 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Junior Brito | Casamento Sem Crise</title>
     
-    <!-- Fontes: Anton (Impacto) e Poppins (Leitura moderna) -->
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Ícones FontAwesome -->
+    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
             --bg-color: #000000;
             --card-bg: #121212;
-            --accent-color: #FF4500; /* Laranja Vibrante */
+            --accent-color: #FF4500;
             --accent-hover: #ff571a;
             --text-white: #FFFFFF;
             --text-gray: #B0B0B0;
             --border-color: #2a2a2a;
-            --success-green: #25D366; /* Para o WhatsApp */
+            --success-green: #25D366;
+            --live-red: #ff0000;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
@@ -41,7 +38,6 @@
             min-height: 100vh;
         }
 
-        /* Container Mobile (Centralizado) */
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
@@ -51,11 +47,11 @@
             align-items: center;
         }
 
-        /* --- HEADER --- */
+        /* HEADER */
         header {
             text-align: center;
             margin-top: 20px;
-            margin-bottom: 20px; /* Reduzi um pouco para caber o evento */
+            margin-bottom: 20px;
             animation: fadeIn 1s ease;
         }
 
@@ -84,46 +80,77 @@
             margin-bottom: 5px;
         }
 
-        .slogan {
-            color: var(--accent-color);
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
+        .slogan { color: var(--accent-color); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
+        .sub-slogan { color: var(--text-gray); font-size: 0.85rem; font-weight: 300; margin-top: 4px; }
 
-        .sub-slogan {
-            color: var(--text-gray);
-            font-size: 0.85rem;
-            font-weight: 300;
-            margin-top: 4px;
-        }
-
-        /* --- ESTILO DO CARD DE EVENTO (NOVO) --- */
+        /* --- CARD DE EVENTO (ATUALIZADO) --- */
         .event-card {
             width: 100%;
             background: linear-gradient(145deg, #1a0b00 0%, #000000 100%);
             border: 2px solid var(--accent-color);
             border-radius: 15px;
-            padding: 20px;
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 0 15px rgba(255, 69, 0, 0.2);
             position: relative;
             overflow: hidden;
             animation: slideDown 0.8s ease;
+            padding-bottom: 20px;
         }
         
-        .event-badge {
-            background-color: var(--accent-color);
+        .event-banner-container {
+            width: 100%;
+            height: 180px;
+            position: relative;
+            border-bottom: 1px solid var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .event-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Botão AO VIVO */
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--live-red);
             color: white;
-            font-size: 0.65rem;
-            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+            z-index: 10;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        
+        .event-content { padding: 0 20px; }
+
+        .event-tag {
+            background-color: rgba(255, 69, 0, 0.15);
+            color: var(--accent-color);
+            font-size: 0.7rem;
+            font-weight: 700;
             text-transform: uppercase;
-            padding: 5px 10px;
+            padding: 4px 10px;
             border-radius: 20px;
             display: inline-block;
             margin-bottom: 10px;
-            letter-spacing: 1px;
+            border: 1px solid var(--accent-color);
         }
         
         .event-title {
@@ -141,8 +168,6 @@
             font-weight: 300;
             line-height: 1.4;
             margin-bottom: 15px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
         }
         
         .event-details {
@@ -157,7 +182,8 @@
         
         .event-btn {
             display: block;
-            width: 100%;
+            width: 90%;
+            margin: 0 auto;
             background-color: var(--accent-color);
             color: white;
             padding: 14px;
@@ -171,12 +197,9 @@
             animation: pulse 2s infinite;
         }
         
-        .event-btn:hover {
-            background-color: white;
-            color: var(--accent-color);
-        }
+        .event-btn:hover { background-color: white; color: var(--accent-color); }
 
-        /* --- SEPARADORES --- */
+        /* SEPARADORES */
         .section-header {
             display: flex;
             flex-direction: column;
@@ -200,7 +223,7 @@
             animation: bounce 2s infinite;
         }
 
-        /* --- DESTAQUE: AULA GRATUITA (Link para Página) --- */
+        /* HERO CARD */
         .hero-card {
             width: 100%;
             position: relative;
@@ -216,49 +239,12 @@
         }
         
         .hero-card:active { transform: scale(0.98); }
-
-        .hero-thumb-container {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .hero-thumb {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
-        }
-
-        .hero-info {
-            padding: 15px;
-            background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
-            text-align: center;
-            border-top: 1px solid #333;
-        }
-
-        .tag-free {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .hero-title {
-            font-family: 'Anton', sans-serif;
-            font-size: 1.3rem;
-            line-height: 1.1;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        /* Botão simulado dentro do card */
+        .hero-thumb-container { width: 100%; height: 200px; overflow: hidden; }
+        .hero-thumb { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+        .hero-info { padding: 15px; background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%); text-align: center; border-top: 1px solid #333; }
+        .tag-free { display: inline-block; background-color: var(--accent-color); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+        .hero-title { font-family: 'Anton', sans-serif; font-size: 1.3rem; line-height: 1.1; margin-bottom: 10px; color: white; }
+        
         .hero-btn {
             display: inline-block;
             background-color: transparent;
@@ -272,12 +258,7 @@
             transition: 0.3s;
         }
 
-        .hero-card:hover .hero-btn {
-            background-color: white;
-            color: black;
-        }
-
-        /* --- CARDS DE PRODUTOS (Horizontal) --- */
+        /* PRODUCT CARDS */
         .product-card {
             display: flex;
             background-color: var(--card-bg);
@@ -292,55 +273,14 @@
             position: relative;
         }
 
-        .product-card:hover {
-            border-color: var(--accent-color);
-            transform: translateX(5px);
-        }
-
-        .card-img-col {
-            width: 35%;
-            background-color: #000;
-            position: relative;
-        }
-
-        .card-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .card-content-col {
-            width: 65%;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .card-tag {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--accent-color);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .card-title {
-            font-family: 'Anton', sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.1;
-            margin-bottom: 6px;
-        }
-
-        .card-desc {
-            font-size: 0.75rem;
-            color: var(--text-gray);
-            line-height: 1.3;
-            margin-bottom: 10px;
-        }
-
+        .product-card:hover { border-color: var(--accent-color); transform: translateX(5px); }
+        .card-img-col { width: 35%; background-color: #000; position: relative; }
+        .card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .card-content-col { width: 65%; padding: 15px; display: flex; flex-direction: column; justify-content: center; }
+        .card-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-color); font-weight: 700; margin-bottom: 4px; }
+        .card-title { font-family: 'Anton', sans-serif; font-size: 1.1rem; line-height: 1.1; margin-bottom: 6px; }
+        .card-desc { font-size: 0.75rem; color: var(--text-gray); line-height: 1.3; margin-bottom: 10px; }
+        
         .btn-small {
             align-self: flex-start;
             padding: 6px 14px;
@@ -353,89 +293,24 @@
             text-transform: uppercase;
             transition: 0.2s;
         }
+        .product-card:hover .btn-small { background-color: var(--accent-color); color: white; }
 
-        .product-card:hover .btn-small {
-            background-color: var(--accent-color);
-            color: white;
-        }
-
-        .whatsapp-card {
-            background-color: #0a1f12;
-            border: 1px solid #1a3c26;
-        }
+        .whatsapp-card { background-color: #0a1f12; border: 1px solid #1a3c26; }
         .whatsapp-card .card-tag { color: var(--success-green); }
         .whatsapp-card .btn-small { border-color: var(--success-green); color: var(--success-green); }
         .whatsapp-card:hover { border-color: var(--success-green); }
         .whatsapp-card:hover .btn-small { background-color: var(--success-green); color: black; }
 
+        /* BOOKS */
+        .books-grid { width: 100%; display: flex; flex-direction: column; gap: 12px; }
+        .book-item { display: flex; align-items: center; background-color: var(--card-bg); border-radius: 8px; padding: 12px; text-decoration: none; border: 1px solid var(--border-color); transition: 0.3s; }
+        .book-item:hover { border-color: var(--accent-color); background-color: #1a1a1a; }
+        .book-thumb { width: 55px; height: 80px; border-radius: 4px; object-fit: cover; margin-right: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        .book-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .book-title { color: white; font-size: 0.95rem; font-weight: 600; line-height: 1.2; margin-bottom: 5px; }
+        .book-cta { color: var(--accent-color); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 5px; }
 
-        /* --- LISTA DE LIVROS (Foco em Vendas) --- */
-        .books-grid {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .book-item {
-            display: flex;
-            align-items: center;
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 12px;
-            text-decoration: none;
-            border: 1px solid var(--border-color);
-            transition: 0.3s;
-        }
-        
-        .book-item:hover {
-            border-color: var(--accent-color);
-            background-color: #1a1a1a;
-        }
-
-        .book-thumb {
-            width: 55px;
-            height: 80px;
-            border-radius: 4px;
-            object-fit: cover;
-            margin-right: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-
-        .book-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .book-title {
-            color: white;
-            font-size: 0.95rem;
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 5px;
-        }
-
-        .book-cta {
-            color: var(--accent-color);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            color: #444;
-            font-size: 0.75rem;
-        }
-
+        footer { margin-top: 40px; text-align: center; color: #444; font-size: 0.75rem; }
         footer i { margin: 0 5px; }
 
         @keyframes pulse {
@@ -443,21 +318,10 @@
             70% { box-shadow: 0 0 0 10px rgba(255, 69, 0, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
         }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-5px);}
-            60% {transform: translateY(-3px);}
-        }
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-5px);} 60% {transform: translateY(-3px);} }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
 
     </style>
 </head>
@@ -468,7 +332,6 @@
         <!-- 1. PERFIL DO INFLUENCIADOR -->
         <header>
             <div class="profile-frame">
-                <!-- FOTO DE PERFIL -->
                 <img src="https://i.imgur.com/pv3N6kT.png" alt="Júnior Brito" class="profile-img">
             </div>
             <h1>Junior Brito</h1>
@@ -476,27 +339,42 @@
             <p class="sub-slogan">Especialista em restauração de casamentos</p>
         </header>
 
-        <!-- --- NOVA SEÇÃO DE EVENTO (DESTAQUE) --- -->
+        <!-- --- SEÇÃO DE EVENTO (COM FOTO E BOTÃO AO VIVO) --- -->
         <div class="event-card">
-            <span class="event-badge">Mentoria Online Sem Custo</span>
             
-            <h2 class="event-title">Casamento Sem Crise</h2>
-            
-            <p class="event-subtitle">
-                Como reconquistar o seu casamento mesmo que o outro já não tenha mais nenhum interesse em você
-            </p>
-            
-            <div class="event-details">
-                <div><i class="far fa-calendar-alt"></i> 08 a 12 Dez</div>
-                <div style="margin-left: 15px;"><i class="far fa-clock"></i> 20:00h</div>
+            <!-- Banner do Evento -->
+            <div class="event-banner-container">
+                <!-- INDICADOR DE AO VIVO -->
+                <div class="live-badge">
+                    <span class="live-dot"></span> AO VIVO
+                </div>
+                
+                <!-- CAPA DO EVENTO ATUALIZADA -->
+                <img src="https://static-media.hotmart.com/co7PcuqM7bxAhJC2ja6z3flXQ24=/filters:quality(100)/klickart-prod/uploads/media/file/9917934/0020_2_a-professional-photograph-captures-a-con_6qui00w4sgwo0cmssbup4w_8ycychnurhouvn0r87qjiw.png" alt="Capa do Evento" class="event-banner-img">
             </div>
 
-            <!-- ⚠️ IMPORTANTE: COLOQUE O LINK DA INSCRIÇÃO AQUI -->
-            <a href="#LINK_INSCRICAO_EVENTO" class="event-btn">
-                GARANTIR MINHA VAGA GRÁTIS
-            </a>
+            <!-- Conteúdo de Texto -->
+            <div class="event-content">
+                <span class="event-tag">Mentoria Online Sem Custo</span>
+                
+                <h2 class="event-title">Casamento Sem Crise</h2>
+                
+                <p class="event-subtitle">
+                    Como reconquistar o seu casamento mesmo que o outro já não tenha mais nenhum interesse em você
+                </p>
+                
+                <div class="event-details">
+                    <div><i class="far fa-calendar-alt"></i> 08 a 12 Dez</div>
+                    <div style="margin-left: 15px;"><i class="far fa-clock"></i> 20:00h</div>
+                </div>
+
+                <!-- LINK DO EVENTO ATUALIZADO -->
+                <a href="https://bryto.com.br/casamento" target="_blank" class="event-btn">
+                    GARANTIR MINHA VAGA GRÁTIS
+                </a>
+            </div>
         </div>
-        <!-- --------------------------------------- -->
+        <!-- -------------------------------------------------- -->
 
         <!-- 2. ISCA DIGITAL (TOPO DE FUNIL) -->
         <div class="section-header">
@@ -504,10 +382,8 @@
             <i class="fas fa-chevron-down arrow-indicator"></i>
         </div>
 
-        <!-- Link para Página de Captura/Aula -->
         <a href="https://bryto.com.br/casamentorestaurado" target="_blank" class="hero-card">
             <div class="hero-thumb-container">
-                <!-- THUMBNAIL DA AULA -->
                 <img src="https://i.ytimg.com/vi/FHq_jlvzRN4/hqdefault.jpg" alt="Aula Gratuita" class="hero-thumb">
             </div>
             <div class="hero-info">
@@ -523,7 +399,6 @@
             <i class="fas fa-chevron-down arrow-indicator"></i>
         </div>
 
-        <!-- Atendimento Individual -->
         <a href="https://www.atendimentojuniorbrito.com/" target="_blank" class="product-card">
             <div class="card-img-col">
                 <img src="https://static.wixstatic.com/media/bda999_b4396466e993401a9dc0aa4b8764720c~mv2.jpg/v1/fill/w_614,h_410,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bda999_b4396466e993401a9dc0aa4b8764720c~mv2.jpg" class="card-img">
@@ -536,7 +411,6 @@
             </div>
         </a>
 
-        <!-- Grupo WhatsApp -->
         <a href="https://chat.whatsapp.com/LBuO7LVnhNx0JUow7Angac" target="_blank" class="product-card whatsapp-card">
             <div class="card-img-col">
                 <img src="https://i.imgur.com/QZrpbHf.png" class="card-img">
@@ -555,7 +429,6 @@
             <i class="fas fa-chevron-down arrow-indicator"></i>
         </div>
 
-        <!-- Casamento Sem Crise (Principal) -->
         <a href="https://bryto.com.br/curso" target="_blank" class="product-card">
             <div class="card-img-col">
                 <img src="https://cakitem.com.br/wp-content/uploads/2023/10/IMAGEM-28.png" class="card-img">
@@ -568,7 +441,6 @@
             </div>
         </a>
 
-        <!-- Casamento Sem Crise SHOT -->
         <a href="https://bryto.com.br/cscshot" target="_blank" class="product-card">
             <div class="card-img-col">
                 <img src="https://i.imgur.com/LrmKVz3.png" class="card-img">

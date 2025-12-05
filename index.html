@@ -83,7 +83,7 @@
         .slogan { color: var(--accent-color); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
         .sub-slogan { color: var(--text-gray); font-size: 0.85rem; font-weight: 300; margin-top: 4px; }
 
-        /* --- CARD DE EVENTO (CORRIGIDO PARA NÃO CORTAR OU DEIXAR ESPAÇO) --- */
+        /* --- CARD DE EVENTO --- */
         .event-card {
             width: 100%;
             background: linear-gradient(145deg, #1a0b00 0%, #000000 100%);
@@ -98,21 +98,19 @@
             padding-bottom: 20px;
         }
         
-        /* CORREÇÃO AQUI: Removemos aspect-ratio e height fixa */
         .event-banner-container {
             width: 100%;
-            height: auto; /* Deixa a altura livre */
+            height: auto;
             position: relative;
             border-bottom: 1px solid var(--accent-color);
             margin-bottom: 15px;
-            line-height: 0; /* Remove espaços brancos fantasmas */
+            line-height: 0;
         }
 
-        /* CORREÇÃO AQUI: Imagem se ajusta sozinha */
         .event-banner-img {
             width: 100%;
-            height: auto; /* A altura será proporcional à largura */
-            display: block; /* Garante que preencha o bloco */
+            height: auto;
+            display: block;
         }
 
         /* Botão AO VIVO */
@@ -342,21 +340,18 @@
             <p class="sub-slogan">Especialista em restauração de casamentos</p>
         </header>
 
-        <!-- --- SEÇÃO DE EVENTO (CORRIGIDO) --- -->
+        <!-- --- SEÇÃO DE EVENTO --- -->
         <div class="event-card">
             
             <!-- Banner do Evento -->
             <div class="event-banner-container">
-                <!-- INDICADOR DE AO VIVO -->
                 <div class="live-badge">
                     <span class="live-dot"></span> AO VIVO
                 </div>
                 
-                <!-- CAPA DO EVENTO -->
                 <img src="https://static-media.hotmart.com/co7PcuqM7bxAhJC2ja6z3flXQ24=/filters:quality(100)/klickart-prod/uploads/media/file/9917934/0020_2_a-professional-photograph-captures-a-con_6qui00w4sgwo0cmssbup4w_8ycychnurhouvn0r87qjiw.png" alt="Capa do Evento" class="event-banner-img">
             </div>
 
-            <!-- Conteúdo de Texto -->
             <div class="event-content">
                 <span class="event-tag">Mentoria Online Sem Custo</span>
                 
@@ -371,13 +366,11 @@
                     <div style="margin-left: 15px;"><i class="far fa-clock"></i> 20:00h</div>
                 </div>
 
-                <!-- LINK DO EVENTO -->
                 <a href="https://bryto.com.br/casamento" target="_blank" class="event-btn">
                     GARANTIR MINHA VAGA GRÁTIS
                 </a>
             </div>
         </div>
-        <!-- -------------------------------------------------- -->
 
         <!-- 2. ISCA DIGITAL (TOPO DE FUNIL) -->
         <div class="section-header">
@@ -426,24 +419,13 @@
             </div>
         </a>
 
-        <!-- 4. CURSOS E TREINAMENTOS -->
+        <!-- 4. CURSOS (AGORA APENAS SHOT E TÍTULO NO SINGULAR) -->
         <div class="section-header">
-            <span class="section-title">Treinamentos Oficiais</span>
+            <span class="section-title">Treinamento Oficial</span>
             <i class="fas fa-chevron-down arrow-indicator"></i>
         </div>
 
-        <a href="https://bryto.com.br/curso" target="_blank" class="product-card">
-            <div class="card-img-col">
-                <img src="https://cakitem.com.br/wp-content/uploads/2023/10/IMAGEM-28.png" class="card-img">
-            </div>
-            <div class="card-content-col">
-                <span class="card-tag">Método Completo</span>
-                <h3 class="card-title">CASAMENTO SEM CRISE</h3>
-                <p class="card-desc">O passo a passo definitivo para restaurar o seu casamento do zero.</p>
-                <div class="btn-small">Ver Detalhes</div>
-            </div>
-        </a>
-
+        <!-- Casamento Sem Crise SHOT (Mantido) -->
         <a href="https://bryto.com.br/cscshot" target="_blank" class="product-card">
             <div class="card-img-col">
                 <img src="https://i.imgur.com/LrmKVz3.png" class="card-img">

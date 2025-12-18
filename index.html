@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Junior Brito | Casamento Sem Crise</title>
     
-    <!-- Fontes -->
+    <!-- Fontes: Anton (Impacto) e Poppins (Leitura moderna) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Ícones -->
+    <!-- Ícones FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-color: #050505;
+            --bg-color: #000000;
             --card-bg: #121212;
-            --accent-color: #FF4500;
-            --accent-glow: rgba(255, 69, 0, 0.4);
+            --accent-color: #FF4500; /* Laranja Vibrante */
+            --accent-hover: #ff571a;
             --text-white: #FFFFFF;
             --text-gray: #B0B0B0;
             --border-color: #2a2a2a;
-            --success-green: #00D045; /* Verde mais vibrante/moderno */
-            --success-dark: #009e33;
+            --success-green: #25D366; /* Para o WhatsApp */
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background-color: var(--bg-color);
@@ -36,9 +39,9 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
+        /* Container Mobile (Centralizado) */
         .mobile-wrapper {
             width: 100%;
             max-width: 480px;
@@ -48,11 +51,11 @@
             align-items: center;
         }
 
-        /* HEADER */
+        /* --- HEADER --- */
         header {
             text-align: center;
             margin-top: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             animation: fadeIn 1s ease;
         }
 
@@ -69,7 +72,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--accent-color);
-            box-shadow: 0 0 30px var(--accent-glow);
+            box-shadow: 0 0 25px rgba(255, 69, 0, 0.3);
         }
 
         h1 {
@@ -79,166 +82,28 @@
             letter-spacing: 1px;
             line-height: 1;
             margin-bottom: 5px;
-            background: -webkit-linear-gradient(#fff, #ccc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
-        .slogan { color: var(--accent-color); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
-        .sub-slogan { color: var(--text-gray); font-size: 0.85rem; font-weight: 300; margin-top: 4px; }
-
-        /* --- CARD DE OFERTA DE ELITE (PREMIUM DESIGN) --- */
-        .sales-card {
-            width: 100%;
-            /* Fundo sutilmente mais claro que o preto total */
-            background: #0f0f0f;
-            /* Borda gradiente sutil */
-            border: 1px solid #333;
-            border-top: 2px solid var(--accent-color);
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 35px;
-            position: relative;
-            overflow: hidden;
-            animation: slideDown 0.8s ease;
-            padding-bottom: 25px;
-            /* O "Glow" laranja atrás do card */
-            box-shadow: 0 10px 40px -10px rgba(255, 69, 0, 0.25);
-        }
-        
-        /* Faixa de Urgência Elegante */
-        .urgency-bar {
-            background: linear-gradient(90deg, #b33000, #ff4500, #b33000);
-            background-size: 200% 100%;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 8px;
-            width: 100%;
-            letter-spacing: 1px;
-            animation: gradientMove 3s infinite linear;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .event-banner-container {
-            width: 100%;
-            height: auto;
-            position: relative;
-            margin-bottom: 20px;
-            /* Efeito de vinheta na imagem para integrar ao fundo preto */
-            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-        }
-
-        .event-banner-img { width: 100%; height: auto; display: block; }
-        
-        .event-content { padding: 0 20px; }
-
-        .sales-title {
-            font-family: 'Anton', sans-serif;
-            font-size: 1.8rem;
-            color: white;
-            line-height: 1.1;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            /* Sombra sutil no texto para destacar */
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-        }
-        
-        .sales-subtitle {
-            font-size: 0.9rem;
-            color: #ccc;
-            font-weight: 300;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        /* Lista de Benefícios Premium */
-        .benefits-list {
-            text-align: left;
-            margin: 0 auto 25px auto;
-            width: 100%;
-            max-width: 320px;
-            list-style: none;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .benefits-list li {
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            color: #eee;
-            display: flex;
-            align-items: center;
-        }
-
-        .benefits-list li:last-child { margin-bottom: 0; }
-
-        .benefits-list li i {
+        .slogan {
             color: var(--accent-color);
-            margin-right: 12px;
-            font-size: 1.1rem;
-            min-width: 20px;
-            text-align: center;
-            filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.6)); /* Brilho no ícone */
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
         }
-        
-        .benefits-list li.more-items {
-            font-weight: 500;
+
+        .sub-slogan {
             color: var(--text-gray);
             font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 10px;
-            margin-top: 5px;
+            font-weight: 300;
+            margin-top: 4px;
         }
 
-        /* BOTÃO "IMPOSSÍVEL NÃO CLICAR" */
-        .sales-btn {
-            position: relative;
-            display: block;
-            width: 100%;
-            background: linear-gradient(to bottom, #00e64d, #00b33c);
-            color: white;
-            padding: 18px;
-            border-radius: 50px; /* Mais arredondado = mais moderno */
-            text-decoration: none;
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 1rem;
-            box-shadow: 0 4px 0 #00802b, 0 10px 20px rgba(0, 255, 0, 0.2); /* Efeito 3D */
-            transition: transform 0.1s, box-shadow 0.1s;
-            overflow: hidden;
-            border: 1px solid #4dff88;
-            text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-        }
-        
-        /* Efeito de Luz Passando (Shimmer) */
-        .sales-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
-            animation: shine 3s infinite;
-        }
-        
-        .sales-btn:active {
-            transform: translateY(4px);
-            box-shadow: 0 0 0 #00802b, inset 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        /* SEPARADORES */
+        /* --- SEPARADORES --- */
         .section-header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 30px 0 15px 0;
+            margin: 25px 0 15px 0;
             width: 100%;
         }
 
@@ -248,7 +113,6 @@
             text-transform: uppercase;
             color: var(--text-white);
             letter-spacing: 1px;
-            opacity: 0.8;
         }
 
         .arrow-indicator {
@@ -258,34 +122,88 @@
             animation: bounce 2s infinite;
         }
 
-        /* ESTILO DOS CARDS PADRÃO (Minimalistas para não competir) */
-        .hero-card, .product-card, .book-item {
-            background-color: #0a0a0a; /* Levemente mais escuro */
-            border: 1px solid #222;
-        }
-        
+        /* --- DESTAQUE: AULA GRATUITA (Link para Página) --- */
         .hero-card {
             width: 100%;
             position: relative;
             border-radius: 12px;
             overflow: hidden;
+            border: 1px solid var(--accent-color);
             margin-bottom: 10px;
             text-decoration: none;
             display: block;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            background: #000;
+            box-shadow: 0 5px 20px rgba(255, 69, 0, 0.15);
             transition: transform 0.2s;
         }
         
         .hero-card:active { transform: scale(0.98); }
-        .hero-thumb-container { width: 100%; height: 200px; overflow: hidden; }
-        .hero-thumb { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-        .hero-info { padding: 15px; background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%); text-align: center; border-top: 1px solid #333; }
-        .tag-free { display: inline-block; background-color: var(--accent-color); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
-        .hero-title { font-family: 'Anton', sans-serif; font-size: 1.3rem; line-height: 1.1; margin-bottom: 10px; color: white; }
-        .hero-btn { display: inline-block; background-color: transparent; border: 1px solid white; color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
 
+        .hero-thumb-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .hero-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .hero-info {
+            padding: 15px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .tag-free {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hero-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        /* Botão simulado dentro do card */
+        .hero-btn {
+            display: inline-block;
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .hero-card:hover .hero-btn {
+            background-color: white;
+            color: black;
+        }
+
+        /* --- CARDS DE PRODUTOS (Horizontal) --- */
         .product-card {
             display: flex;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
             width: 100%;
@@ -296,42 +214,161 @@
             position: relative;
         }
 
-        .product-card:hover { border-color: var(--accent-color); transform: translateX(5px); }
-        .card-img-col { width: 35%; background-color: #000; position: relative; }
-        .card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .card-content-col { width: 65%; padding: 15px; display: flex; flex-direction: column; justify-content: center; }
-        .card-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-color); font-weight: 700; margin-bottom: 4px; }
-        .card-title { font-family: 'Anton', sans-serif; font-size: 1.1rem; line-height: 1.1; margin-bottom: 6px; }
-        .card-desc { font-size: 0.75rem; color: var(--text-gray); line-height: 1.3; margin-bottom: 10px; }
-        .btn-small { align-self: flex-start; padding: 6px 14px; background-color: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; transition: 0.2s; }
-        .product-card:hover .btn-small { background-color: var(--accent-color); color: white; }
+        .product-card:hover {
+            border-color: var(--accent-color);
+            transform: translateX(5px);
+        }
 
-        .whatsapp-card { background-color: #05140b; border: 1px solid #0f2e1b; }
+        .card-img-col {
+            width: 35%;
+            background-color: #000;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content-col {
+            width: 65%;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .card-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .card-desc {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .btn-small {
+            align-self: flex-start;
+            padding: 6px 14px;
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+
+        .product-card:hover .btn-small {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .whatsapp-card {
+            background-color: #0a1f12;
+            border: 1px solid #1a3c26;
+        }
         .whatsapp-card .card-tag { color: var(--success-green); }
         .whatsapp-card .btn-small { border-color: var(--success-green); color: var(--success-green); }
         .whatsapp-card:hover { border-color: var(--success-green); }
         .whatsapp-card:hover .btn-small { background-color: var(--success-green); color: black; }
 
-        .books-grid { width: 100%; display: flex; flex-direction: column; gap: 12px; }
-        .book-item { display: flex; align-items: center; border-radius: 8px; padding: 12px; text-decoration: none; transition: 0.3s; }
-        .book-item:hover { border-color: var(--accent-color); background-color: #1a1a1a; }
-        .book-thumb { width: 55px; height: 80px; border-radius: 4px; object-fit: cover; margin-right: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
-        .book-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-        .book-title { color: white; font-size: 0.95rem; font-weight: 600; line-height: 1.2; margin-bottom: 5px; }
-        .book-cta { color: var(--accent-color); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 5px; }
 
-        footer { margin-top: 50px; text-align: center; color: #333; font-size: 0.75rem; }
+        /* --- LISTA DE LIVROS (Foco em Vendas) --- */
+        .books-grid {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .book-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 12px;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+        }
+        
+        .book-item:hover {
+            border-color: var(--accent-color);
+            background-color: #1a1a1a;
+        }
+
+        .book-thumb {
+            width: 55px;
+            height: 80px;
+            border-radius: 4px;
+            object-fit: cover;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .book-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .book-title {
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .book-cta {
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #444;
+            font-size: 0.75rem;
+        }
+
         footer i { margin: 0 5px; }
 
-        @keyframes shine {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-5px);}
+            60% {transform: translateY(-3px);}
         }
-        @keyframes gradientMove { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-5px);} 60% {transform: translateY(-3px);} }
-        @keyframes fadeIn { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
 
     </style>
 </head>
@@ -339,9 +376,10 @@
 
     <div class="mobile-wrapper">
 
-        <!-- 1. PERFIL -->
+        <!-- 1. PERFIL DO INFLUENCIADOR -->
         <header>
             <div class="profile-frame">
+                <!-- FOTO DE PERFIL -->
                 <img src="https://i.imgur.com/pv3N6kT.png" alt="Júnior Brito" class="profile-img">
             </div>
             <h1>Junior Brito</h1>
@@ -349,51 +387,16 @@
             <p class="sub-slogan">Especialista em restauração de casamentos</p>
         </header>
 
-        <!-- --- CARD DE OFERTA ELITE (IMPOSSÍVEL NÃO CLICAR) --- -->
-        <div class="sales-card">
-            
-            <!-- Barra de Urgência -->
-            <div class="urgency-bar">
-                <i class="far fa-clock"></i> Apenas Hoje até às 23:59
-            </div>
-            
-            <!-- Imagem -->
-            <div class="event-banner-container">
-                <img src="https://static-public.pages.hotmart.com/uploads/media/file/10051952/se_voc_fosse_pagar_s_pelos_bnus..._(25).png" alt="Bônus Exclusivos" class="event-banner-img">
-            </div>
-
-            <div class="event-content">
-                <h2 class="sales-title">Método Casamento Sem Crise</h2>
-                
-                <p class="sales-subtitle">
-                    A oportunidade final para salvar seu casamento com o método validado internacionalmente.
-                </p>
-                
-                <!-- Lista de Benefícios (Fundo Transparente) -->
-                <ul class="benefits-list">
-                    <li><i class="fas fa-play-circle"></i> +200 Aulas (12 Módulos Completos)</li>
-                    <li><i class="fas fa-star"></i> <strong>BÔNUS VIP:</strong> Atendimento Individual</li>
-                    <li><i class="fas fa-shield-alt"></i> Garantia Total de 30 Dias</li>
-                    <li><i class="fas fa-headset"></i> 1 Ano de Acompanhamento</li>
-                    <!-- Gatilho de Curiosidade -->
-                    <li class="more-items"><i class="fas fa-plus"></i> E diversos outros benefícios...</li>
-                </ul>
-
-                <!-- BOTÃO COM EFEITO SHINE (BRILHO) -->
-                <a href="https://bryto.com.br/csc" class="sales-btn">
-                    SIM! QUERO RESTAURAR MEU CASAMENTO
-                </a>
-            </div>
-        </div>
-
-        <!-- 2. ISCA DIGITAL -->
+        <!-- 2. ISCA DIGITAL (TOPO DE FUNIL) -->
         <div class="section-header">
             <span class="section-title">Comece Por Aqui</span>
             <i class="fas fa-chevron-down arrow-indicator"></i>
         </div>
 
+        <!-- Link para Página de Captura/Aula -->
         <a href="https://bryto.com.br/casamentorestaurado" target="_blank" class="hero-card">
             <div class="hero-thumb-container">
+                <!-- THUMBNAIL DA AULA -->
                 <img src="https://i.ytimg.com/vi/FHq_jlvzRN4/hqdefault.jpg" alt="Aula Gratuita" class="hero-thumb">
             </div>
             <div class="hero-info">
@@ -403,12 +406,13 @@
             </div>
         </a>
 
-        <!-- 3. MENTORIA -->
+        <!-- 3. SERVIÇO PREMIUM & COMUNIDADE -->
         <div class="section-header">
             <span class="section-title">Mentoria & Comunidade</span>
             <i class="fas fa-chevron-down arrow-indicator"></i>
         </div>
 
+        <!-- Atendimento Individual -->
         <a href="https://www.atendimentojuniorbrito.com/" target="_blank" class="product-card">
             <div class="card-img-col">
                 <img src="https://static.wixstatic.com/media/bda999_b4396466e993401a9dc0aa4b8764720c~mv2.jpg/v1/fill/w_614,h_410,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bda999_b4396466e993401a9dc0aa4b8764720c~mv2.jpg" class="card-img">
@@ -421,6 +425,7 @@
             </div>
         </a>
 
+        <!-- Grupo WhatsApp -->
         <a href="https://chat.whatsapp.com/LBuO7LVnhNx0JUow7Angac" target="_blank" class="product-card whatsapp-card">
             <div class="card-img-col">
                 <img src="https://i.imgur.com/QZrpbHf.png" class="card-img">
@@ -433,12 +438,26 @@
             </div>
         </a>
 
-        <!-- 4. TREINAMENTO (SHOT) -->
+        <!-- 4. CURSOS E TREINAMENTOS -->
         <div class="section-header">
-            <span class="section-title">Treinamento Oficial</span>
+            <span class="section-title">Treinamentos Oficiais</span>
             <i class="fas fa-chevron-down arrow-indicator"></i>
         </div>
 
+        <!-- Casamento Sem Crise (Principal) -->
+        <a href="https://bryto.com.br/curso" target="_blank" class="product-card">
+            <div class="card-img-col">
+                <img src="https://cakitem.com.br/wp-content/uploads/2023/10/IMAGEM-28.png" class="card-img">
+            </div>
+            <div class="card-content-col">
+                <span class="card-tag">Método Completo</span>
+                <h3 class="card-title">CASAMENTO SEM CRISE</h3>
+                <p class="card-desc">O passo a passo definitivo para restaurar o seu casamento do zero.</p>
+                <div class="btn-small">Ver Detalhes</div>
+            </div>
+        </a>
+
+        <!-- Casamento Sem Crise SHOT -->
         <a href="https://bryto.com.br/cscshot" target="_blank" class="product-card">
             <div class="card-img-col">
                 <img src="https://i.imgur.com/LrmKVz3.png" class="card-img">
@@ -451,50 +470,68 @@
             </div>
         </a>
 
-        <!-- 5. LIVROS -->
+        <!-- 5. LIVROS (Venda Direta) -->
         <div class="section-header">
             <span class="section-title">Livraria Oficial</span>
             <i class="fas fa-chevron-down arrow-indicator"></i>
         </div>
 
         <div class="books-grid">
-            <a href="https://reeconection.com/crise/" target="_blank" class="book-item">
-                <img src="https://i.imgur.com/5a7IomA.png" alt="Capa Crise de Identidade" class="book-thumb">
-                <div class="book-info">
-                    <h4 class="book-title">Crise de Identidade | Você merece mais do que está vivendo </h4>
-                    <span class="book-cta">ADQUIRIR AGORA <i class="fas fa-shopping-cart"></i></span>
-                </div>
-            </a>
+            <!-- Livro 1: Crise de Identidade (CORRIGIDO) -->
+<a href="https://reeconection.com/crise/" target="_blank" class="book-item">
+    
+    <!-- A classe "book-thumb" é OBRIGATÓRIA para a imagem ficar pequena -->
+    <img src="https://i.imgur.com/5a7IomA.png" alt="Capa Crise de Identidade" class="book-thumb">
+    
+    <div class="book-info">
+        <h4 class="book-title">Crise de Identidade | Você merece mais do que está vivendo </h4>
+        <span class="book-cta">ADQUIRIR AGORA <i class="fas fa-shopping-cart"></i></span>
+    </div>
+</a>
 
-            <a href="https://livros.reeconection.com/fretegratis/" target="_blank" class="book-item">
-                <img src="https://i.imgur.com/PmIwL7w.png" alt="Capa 30 Dias" class="book-thumb">
-                <div class="book-info">
-                    <h4 class="book-title">30 Dias para Provocar um Milagre no Seu Casamento</h4>
-                    <span class="book-cta">ADQUIRIR AGORA <i class="fas fa-shopping-cart"></i></span>
-                </div>
-            </a>
+          <!-- Livro 2: 30 Dias para Provocar um Milagre -->
+<a href="https://livros.reeconection.com/fretegratis/" target="_blank" class="book-item">
+    <!-- Não apague class="book-thumb" -->
+    <img src="https://i.imgur.com/PmIwL7w.png" alt="Capa 30 Dias" class="book-thumb">
+    
+    <div class="book-info">
+        <h4 class="book-title">30 Dias para Provocar um Milagre no Seu Casamento</h4>
+        <span class="book-cta">ADQUIRIR AGORA <i class="fas fa-shopping-cart"></i></span>
+    </div>
+</a>
 
-            <a href="https://api.whatsapp.com/send/?phone=5518996041285&text=quero_o_livro_ex_dependente_emocional&type=phone_number&app_absent=0" target="_blank" class="book-item">
-                <img src="https://m.media-amazon.com/images/I/71pLWpacreL._SL1500_.jpg" class="book-thumb">
-                <div class="book-info">
-                    <h4 class="book-title">Ex Dependente Emocional | A Revolução dos que Merecem ser Amados </h4>
-                    <span class="book-cta">ADQUIRIR AGORA <i class="fas fa-shopping-cart"></i></span>
-                </div>
-            </a>
+<!-- Livro 3: Ex Dependente Emocional -->
+<a href="https://api.whatsapp.com/send/?phone=5518996041285&text=quero_o_livro_ex_dependente_emocional&type=phone_number&app_absent=0" target="_blank" class="book-item">
+    <!-- Não apague class="book-thumb" -->
+    <img src="https://m.media-amazon.com/images/I/71pLWpacreL._SL1500_.jpg" class="book-thumb">
+    
+    <div class="book-info">
+        <h4 class="book-title">Ex Dependente Emocional | A Revolução dos que Merecem ser Amados </h4>
+        <span class="book-cta">ADQUIRIR AGORA <i class="fas fa-shopping-cart"></i></span>
+    </div>
+</a>
 
-            <a href="https://api.whatsapp.com/send/?phone=5518996041285&text=quero_o_livro_Minha_Vida_com_Ester:_Nunca_foi_sobre_N%C3%B3s&type=phone_number&app_absent=0" target="_blank" class="book-item">
-                <img src="https://m.media-amazon.com/images/I/717iJxo0UEL._SL1500_.jpg" alt="Capa Minha Vida com Ester" class="book-thumb">
-                <div class="book-info">
-                    <h4 class="book-title">Minha Vida com Ester: Nunca foi sobre Nós</h4>
-                    <span class="book-cta">ADQUIRIR AGORA <i class="fas fa-shopping-cart"></i></span>
-                </div>
-            </a>
+<!-- Livro 4: Minha Vida com Ester -->
+<a href="https://api.whatsapp.com/send/?phone=5518996041285&text=quero_o_livro_Minha_Vida_com_Ester:_Nunca_foi_sobre_N%C3%B3s&type=phone_number&app_absent=0" target="_blank" class="book-item">
+    <!-- Não apague class="book-thumb" -->
+    <img src="https://m.media-amazon.com/images/I/717iJxo0UEL._SL1500_.jpg" alt="Capa Minha Vida com Ester" class="book-thumb">
+    
+    <div class="book-info">
+        <h4 class="book-title">Minha Vida com Ester: Nunca foi sobre Nós</h4>
+        <span class="book-cta">ADQUIRIR AGORA <i class="fas fa-shopping-cart"></i></span>
+    </div>
+</a>
         </div>
 
         <footer>
             <p>&copy; 2025 Junior Brito | Casamento Sem Crise</p>
+            <p style="margin-top:5px; opacity:0.5;">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-facebook"></i>
+            </p>
         </footer>
 
     </div>
 </body>
-    </html>
+</html>
